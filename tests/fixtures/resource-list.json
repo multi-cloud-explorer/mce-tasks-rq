@@ -1,0 +1,15 @@
+{
+    "value": [
+        {
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MY_RG/providers/Microsoft.Compute/virtualMachines/MY_VM",
+            "name": "MY_VM",
+            "type": "Microsoft.Compute/virtualMachines",
+            "location": "westeurope",
+            "tags": {
+                "hidden-DevTestLabs-LabUId": "00000000-0000-0000-0000-000000000000",
+                "hidden-DevTestLabs-LogicalResourceUId": "00000000-0000-0000-0000-000000000000"
+            }
+        }
+        
+    ]
+}

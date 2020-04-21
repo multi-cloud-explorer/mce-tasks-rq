@@ -1,0 +1,52 @@
+{
+    "name": "MY_VM",
+    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MY_RG/providers/Microsoft.Compute/virtualMachines/MY_VM",
+    "type": "Microsoft.Compute/virtualMachines",
+    "location": "westeurope",
+    "tags": {
+        "hidden-DevTestLabs-LabUId": "00000000-0000-0000-0000-000000000000",
+        "hidden-DevTestLabs-LogicalResourceUId": "00000000-0000-0000-0000-000000000000"
+    },
+    "properties": {
+        "vmId": "00000000-0000-0000-0000-000000000000",
+        "hardwareProfile": {
+            "vmSize": "Standard_D2s_v3"
+        },
+        "storageProfile": {
+            "imageReference": {
+                "publisher": "MicrosoftWindowsServer",
+                "offer": "WindowsServer",
+                "sku": "2012-Datacenter-smalldisk",
+                "version": "latest"
+            },
+            "osDisk": {
+                "osType": "Windows",
+                "name": "MY_VM",
+                "createOption": "FromImage",
+                "caching": "ReadWrite",
+                "managedDisk": {
+                    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MY_RG/providers/Microsoft.Compute/disks/MY_VM"
+                }
+            },
+            "dataDisks": []
+        },
+        "osProfile": {
+            "computerName": "MY_VM",
+            "adminUsername": "gitlab-runner",
+            "windowsConfiguration": {
+                "provisionVMAgent": true,
+                "enableAutomaticUpdates": true
+            },
+            "secrets": [],
+            "allowExtensionOperations": true
+        },
+        "networkProfile": {
+            "networkInterfaces": [
+                {
+                    "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MY_RG/providers/Microsoft.Network/networkInterfaces/MY_NETWORK"
+                }
+            ]
+        },
+        "provisioningState": "Succeeded"
+    }
+}

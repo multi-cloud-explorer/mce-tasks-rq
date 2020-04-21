@@ -1,0 +1,28 @@
+{
+    "value": [
+        {
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MY_RG",
+            "name": "MY_RG",
+            "type": "Microsoft.Resources/resourceGroups",
+            "location": "francecentral",
+            "managedBy": "subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.RecoveryServices/",
+            "tags": {
+                "CreationDate": "2019-07-04",
+                "ExpireDate": "2019-07-14"
+            },
+            "properties": {
+                "provisioningState": "Succeeded"
+            }
+        },
+        {
+            "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/MY_RG2",
+            "name": "MY_RG2",
+            "type": "Microsoft.Resources/resourceGroups",
+            "location": "westeurope",
+            "managedBy": "subscriptions/00000000-0000-0000-0000-000000000000/providers/Microsoft.RecoveryServices/",
+            "properties": {
+                "provisioningState": "Succeeded"
+            }
+        }
+    ]
+}

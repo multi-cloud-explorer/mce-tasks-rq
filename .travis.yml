@@ -1,0 +1,38 @@
+os: linux
+dist: xenial
+language: python
+
+python:
+  - "3.7"
+
+services:
+  - docker
+
+jobs:
+  include:
+    - name: "Python 3.7 on Linux Ubuntu"
+      python: 3.7
+      env: DJANGO_VERSION=3.0.5 TEST_DB_ENGINE=psql DATABASE_URL=postgres://travis:travis@localhost/mcetest CACHE_URL=redis://127.0.0.1:6379/0
+
+before_install:
+  - python -m pip install --upgrade pip
+
+  - docker run -d -p 6379:6379 redis:5-alpine redis-server --appendonly yes
+
+  - if [[ $TEST_DB_ENGINE == psql ]]; then
+       docker run -d -p 5432:5432 -e POSTGRES_DB=travis -e POSTGRES_USER=travis -e POSTGRES_PASSWORD=travis -e POSTGRES_DB=mcetest postgres:12-alpine;
+       pip install psycopg2-binary;
+    fi
+
+install:
+  - pip install -e .[tests,dev]
+  - pip install -U coveralls
+  - pip install -U codecov
+
+script:
+  - ./manage.py test -- -m 'not mce_bug'
+
+after_success:
+  - coveralls
+  - codecov
+

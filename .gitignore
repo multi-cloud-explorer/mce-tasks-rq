@@ -1,0 +1,38 @@
+backend/apps/
+id_rsa_*
+
+*.tfstate*
+.terraform/
+
+TODO.md
+.venv/
+.coverage
+coverage.xml
+*.egg-info
+.env
+*.pid
+.venv/
+archives/
+node_modules
+*.sqlite3
+dist/
+__pycache__
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
